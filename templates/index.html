@@ -1,0 +1,51 @@
+{%  block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Mobile friendly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Provide bootstrap as recommended from: https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+    <link rel="stylesheet" href={{ url_for("bower.static", filename="bootstrap/dist/css/bootstrap.min.css") }}>
+    <link rel="stylesheet" href={{ url_for("bower.static", filename="ie10-viewport-bug-workaround/dist/ie10-viewport-bug-workaround.min.css") }}>
+    <title>The Voxy Word Count App</title>
+</head>
+<body>
+
+    <h1>WordCount</h1>
+    <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+              {{ form.text.label }}
+              {{ form.text(class ="form-control") }}
+              <!--textarea class="form-control" id="text"></textarea-->
+            </div>
+
+            <button type="submit" class="btn btn-default">Word Count</button>
+    </form>
+    {% if word_count is defined %}
+    <div >
+         {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                    {% for message in messages %}
+                        <div>
+                        {{ message }}
+                        </div>
+                    {% endfor %}
+             {% endif %}
+         {% endwith %}
+    </div>
+    {%  endif %}
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src={{ url_for('bower.static', filename="jquery/dist/jquery.js") }}></script>
+    <script src={{ url_for('bower.static', filename="popper.js/dist/popper.min.js")}}></script>
+    <script src={{ url_for('bower.static', filename="bootstrap/dist/js/bootstrap.min.js") }}></script>
+
+</body>
+</html>
+{%  endblock %}
