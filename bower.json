@@ -1,0 +1,24 @@
+{
+  "name": "voxy_coding_challenge",
+  "authors": [
+    "Sidharth Gupta <itissid@gmail.com>"
+  ],
+  "description": "Coding challenge for word count",
+  "main": "",
+  "license": "MIT",
+  "homepage": "github.com/itissid",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "ie10-viewport-bug-workaround": "^1.0.4",
+    "popper.js": "^1.14.3"
+  }
+}

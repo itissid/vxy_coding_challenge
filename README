@@ -1,0 +1,17 @@
+gunicorn --workers 3 --bind 0.0.0.0:4999 app:wordcount
+
+To run only on local server to debug:
+```
+>> export FLASK_DEBUG=1
+>> flask run
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 313-665-416
+```
+Don't use above method in prod. The advantage of the above is a 
+webapp that reloads with changes. Makes dev faster
