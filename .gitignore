@@ -3,3 +3,10 @@
 .idea/
 bower_components
 venv
+# Pesky files for virtualenv
+.Python
+bin/
+include/
+lib/
+pip-selfcheck.json
+
