@@ -23,3 +23,16 @@ To run only on local server to debug and develop:
 ```
 Don't use local server in prod. The advantage of the above is a 
 webapp that reloads with changes. Makes dev faster.
+
+## TODOs
+- Add some logic to avoid DDOS'ing the form with too much data. Like word count limit. # Submissions per second etc.
+- For `config.py` I would want to add some production keys as part of the deployment instead of hardcoding 
+- Productionize using something like `upstart`: Ubuntu and other distributions has a nice feature to say `sudo start myapp` 
+this would be pretty useful to run the app in production.
+- Logging: Did not use a logger, would be nice to catch the errors
+- Integration Testing: Lots of stuff here, testing application routes, running the application in a container and running
+a submit via some BDD server etc.
+
+Minor things
+- Refactor the template into a base.html and index.html
+- write a script in python to run the app more easly that to fiddle with environment variables.
