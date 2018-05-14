@@ -28,6 +28,7 @@ webapp that reloads with changes. Makes dev faster.
 There is one test I wrote to make sure things work correctly. Run it using `pytest`
 
 ## TODOs
+
 - Add some logic to avoid DDOS'ing the form with too much data. Like word count limit. # Submissions per second etc.
 - For `config.py` I would want to add some production keys as part of the deployment instead of hardcoding 
 - Productionize using something like `upstart`: Ubuntu and other distributions has a nice feature to say `sudo start myapp` 
@@ -36,6 +37,8 @@ this would be pretty useful to run the app in production and restart things auto
 - Integration Testing: Lots of stuff here, testing application routes, running the application in a container and running
 a submit via some BDD server etc.
 - I would like to use `tox` instead of virtual env to make the environment more configurable like prod, staging, dev etc.
+- Internationalization: How to deal with foreign languages is a feature I would have like to build. Currently I just use NLTK to split the
+text and get the count. I suspect that some foreign languages treat boundaries differently, and so dealing with that would be nice.
 
 Minor things
 - Refactor the template into a base.html and index.html
