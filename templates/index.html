@@ -65,7 +65,7 @@
       <hr>
       <h2>A Toy Word Count Application</h2>
       <hr>
-        <form action="" method="post">
+        <form action="/submit" method="post">
                 {{ form.hidden_tag() }}
                 <div class="form-group">
                   {{ form.text.label }}
@@ -75,8 +75,12 @@
 
                 <button type="submit" class="btn btn-dark">Word Count</button>
         </form>
-        {% if word_count is defined %}
-        <div >
+        <hr>
+        {% if word_count is defined or is_init is defined%}
+        <div>
+        {% else %}
+        <div class="alert alert-danger" role="alert">
+        {% endif %}
              {% with messages = get_flashed_messages() %}
                 {% if messages %}
                         {% for message in messages %}
@@ -87,7 +91,6 @@
                  {% endif %}
              {% endwith %}
         </div>
-        {%  endif %}
    </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

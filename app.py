@@ -12,17 +12,24 @@ wordcount.debug = True
 wordcount.config.from_object(Config)
 
 
-@wordcount.route('/', methods=["GET", "POST"])
+@wordcount.route('/', methods=["GET"])
 def index():
     form = WordCountForm()
+    return render_template("index.html", title="Word Count", form=form, is_init=True)
+
+
+@wordcount.route('/submit', methods=["POST"])
+def submit():
+    form = WordCountForm()
     print(form.validate_on_submit())
+
     if form.validate_on_submit():
         word_count = count_words(form.text.data)
         flash("You submitted text data with {} words".format(word_count))
         print(wordcount)
         return render_template("index.html", title="Word Count", form=form, word_count=word_count)
+    flash("You must submit some words to count!")
     return render_template("index.html", title="Word Count", form=form)
-
 
 if __name__ == '__main__':
     print("Running from main")
