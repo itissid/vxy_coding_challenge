@@ -1,8 +1,19 @@
-gunicorn --workers 3 --bind 0.0.0.0:4999 app:wordcount
+Don't use above method in prod. The advantage of the above is a 
+webapp that reloads with changes. Makes dev faster.
 
-To run only on local server to debug:
+## Installation
+1. Install the python dependencies from requirements.txt
+`pip install -r requirements.txt`
+2. Install bower. See https://bower.io/
+3. Install the requisite bower components from `bower.json` using `bower install`
+4. Run the flask server using gunicorn
+`gunicorn --workers 3 --bind 0.0.0.0:4999 app:wordcount`
+
+To run only on local server to debug and develop:
+
 ```
 >> export FLASK_DEBUG=1
+>> export FLASK_APP=app:wordcount
 >> flask run
  * Environment: production
    WARNING: Do not use the development server in a production environment.
@@ -13,5 +24,3 @@ To run only on local server to debug:
  * Debugger is active!
  * Debugger PIN: 313-665-416
 ```
-Don't use above method in prod. The advantage of the above is a 
-webapp that reloads with changes. Makes dev faster
