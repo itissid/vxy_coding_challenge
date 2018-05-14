@@ -28,8 +28,8 @@ webapp that reloads with changes. Makes dev faster.
 - Add some logic to avoid DDOS'ing the form with too much data. Like word count limit. # Submissions per second etc.
 - For `config.py` I would want to add some production keys as part of the deployment instead of hardcoding 
 - Productionize using something like `upstart`: Ubuntu and other distributions has a nice feature to say `sudo start myapp` 
-this would be pretty useful to run the app in production.
-- Logging: Did not use a logger, would be nice to catch the errors
+this would be pretty useful to run the app in production and restart things automatically on server restarts.
+- Logging: Did not use a logger, would be nice to catch the errors log em and send alerts.
 - Integration Testing: Lots of stuff here, testing application routes, running the application in a container and running
 a submit via some BDD server etc.
 
