@@ -1,6 +1,3 @@
-Don't use above method in prod. The advantage of the above is a 
-webapp that reloads with changes. Makes dev faster.
-
 ## Installation
 1. Install the python dependencies from requirements.txt
 `pip install -r requirements.txt`
@@ -24,3 +21,5 @@ To run only on local server to debug and develop:
  * Debugger is active!
  * Debugger PIN: 313-665-416
 ```
+Don't use local server in prod. The advantage of the above is a 
+webapp that reloads with changes. Makes dev faster.
