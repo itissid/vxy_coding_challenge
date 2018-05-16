@@ -23,3 +23,8 @@ To run only on local server to debug and develop:
 ```
 Don't use local server in prod. The advantage of the above is a 
 webapp that reloads with changes. Makes dev faster.
+
+
+References
+[1 Flask Docs](http://flask.pocoo.org/docs/0.12)
+[2 Understanding Application and Request Contexts](http://kronosapiens.github.io/blog/2014/08/14/understanding-contexts-in-flask.html)
