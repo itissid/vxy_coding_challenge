@@ -7,7 +7,8 @@
 4. Run the flask server using gunicorn 
 ```gunicorn --workers 3 --bind 0.0.0.0:4999 app:wordcount```
 
-To run only on local server to debug and develop:
+
+4.1 To run only on local server to debug and develop:
 
 ```
 >> export FLASK_DEBUG=1
@@ -22,6 +23,12 @@ To run only on local server to debug and develop:
  * Debugger is active!
  * Debugger PIN: 313-665-416
 ```
+
+## Run tests
+From the `pwd` set to the root dir. Say `py.test voxy/` to discover and run tests in the `voxy/` module. Running py.test alone
+will likely not work because it tries discovering all the tests in the PWD and if you have a virtual env it can 
+throw it off.
+
 Don't use local server in prod. The advantage of the above is a 
 webapp that reloads with changes. Makes dev faster.
 
