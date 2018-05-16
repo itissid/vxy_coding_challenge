@@ -1,4 +1,4 @@
-from flask import Flask, flash
+from flask import Flask, flash, make_response, request, redirect, url_for
 from flask import render_template
 from config import Config
 from flask_bower import Bower
@@ -17,9 +17,12 @@ def index():
     form = WordCountForm()
     return render_template("index.html", title="Word Count", form=form, is_init=True)
 
-
-@wordcount.route('/submit', methods=["POST"])
+# TODO: Would like to have some kind of a word/data limit on what can be submitted.
+@wordcount.route('/submit', methods=["GET","POST"])
 def submit():
+    if request.method == "GET":
+        return redirect(("/"))
+
     form = WordCountForm()
     print(form.validate_on_submit())
 
